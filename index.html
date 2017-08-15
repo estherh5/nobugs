@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="description" content="NoBugs! and Center City Security Supplies are family-owned pest control and security supply stores respectively, in Philadelphia, PA.">
     <meta name="keywords" content="pest control supplies, security supplies, Philadelphia, NoBugs, Center City">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Anton|Assistant:800|Carter+One|Londrina+Solid|Merriweather:900|Oswald:700|Piedra|Poppins:500|Ranchers|Stardos+Stencil:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abel|Armata|Cormorant+Garamond|Didact+Gothic|Hind+Vadodara|News+Cycle|Open+Sans|Pathway+Gothic+One|Poiret+One|Pontano+Sans|Questrial|Source+Sans+Pro" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -19,20 +20,47 @@
     </script>
     <title>NoBugs!</title>
   </head>
-  <body style="height: 100vh; align-items: center; justify-content: center; background-color: #e6e5e5;">
-    <div id="container">
-      <a href="index.html">
-        <img id="logo-big" src="images/logo.png" alt="Logo" title="NoBugs!">
-      </a>
-      <h1>pest control supplies</h1>
-      <nav id="menu-buttons-home">
-        <button class="homepage"><a href="products/index.html">PRODUCTS</a></button>
-        <button class="homepage"><a href="seminars/index.html">SEMINARS</a></button>
-        <button class="homepage"><a href="history/index.html">HISTORY</a></button>
-        <button class="homepage"><a href="contact/index.html">CONTACT</a></button>
-      </nav>
-      <h3><a href="tel:12155927997">(215) 592-7997</a> | <a href="contact/index.html">545 North Orianna Street, Philadelphia, PA</a></h3>
+  <body style="height: 100vh; background-color: #e6e5e5;">
+    <div class="container-fluid h-100 align-items-center d-flex justify-content-center">
+      <div id="main-row" class="row no-gutters align-items-center justify-content-center">
+        <div class="col">
+          <div class="row no-gutters">
+            <div class="col">
+              <a href="products/index.html">
+                <img id="logo-big" src="images/logo.png" alt="Logo" title="NoBugs!">
+              </a>
+            </div>
+          </div>
+          <div class="row no-gutters">
+            <div class="col">
+              <h1 class="homepage">pest control supplies</h1>
+            </div>
+          </div>
+          <div class="row no-gutters justify-content-center">
+            <div class="col-auto">
+              <button class="homepage"><a class="link-important" href="products/index.html">PRODUCTS</a></button>
+            </div>
+            <div class="col-auto">
+              <button class="homepage"><a class="link-important" href="seminars/index.html">SEMINARS</a></button>
+            </div>
+            <div class="col-auto">
+              <button class="homepage"><a class="link-important" href="history/index.html">HISTORY</a></button>
+            </div>
+            <div class="col-auto">
+              <button class="homepage"><a class="link-important" href="contact/index.html">CONTACT</a></button>
+            </div>
+          </div>
+          <div class="row no-gutters">
+            <div class="col">
+              <h2 class="homepage"><a href="tel:12155927997">(215) 592-7997</a> | <a href="contact/index.html">545 North Orianna Street, Philadelphia, PA</a></h2>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="main.js"></script>
   </body>
 </html>

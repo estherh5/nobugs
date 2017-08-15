@@ -1,6 +1,5 @@
 // Define variables
 var header = document.getElementById('header');
-var footer = document.getElementById('footer');
 var images = document.getElementsByClassName('family-image');
 var modals = document.getElementsByClassName('modal');
 var zoomed = document.getElementsByClassName('zoomed');
@@ -10,10 +9,8 @@ var closeButtons = document.getElementsByClassName('close');
 window.addEventListener('scroll', function () {
   if (window.pageYOffset > 100) {
     header.classList.add('shrink');
-    footer.classList.add('shrink');
   } else if (header.classList.contains('shrink')) {
     header.classList.remove('shrink');
-    footer.classList.remove('shrink');
   }
 })
 
@@ -34,8 +31,8 @@ function modalDisplay() {
   modals[this.dataset.number].classList.add('modal-display');
 }
 
-function modalHide() {
-  if (this.classList.contains('modal-display')) {
+function modalHide(e) {
+  if (e.target == this & this.classList.contains('modal-display')) {
     this.classList.remove('modal-display');
   } else if (this.classList.contains('close')) {
     this.parentNode.classList.remove('modal-display');

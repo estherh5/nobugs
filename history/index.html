@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Anton|Assistant:800|Carter+One|Londrina+Solid|Merriweather:900|Oswald:700|Piedra|Poppins:500|Ranchers|Stardos+Stencil:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abel|Armata|Cormorant+Garamond|Didact+Gothic|Hind+Vadodara|News+Cycle|Open+Sans|Pathway+Gothic+One|Poiret+One|Pontano+Sans|Questrial|Source+Sans+Pro" rel="stylesheet">
-    <link href="../style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -20,51 +21,59 @@
     <title>NoBugs!</title>
   </head>
   <body>
-    <div id="header">
-      <a href="../index.html">
+    <nav id="header" class="nav fixed-top justify-content-between">
+      <a class="nav-item" href="../index.html">
         <img id="logo" src="../images/logo.png" alt="Logo" title="NoBugs!">
       </a>
-      <nav id="menu-buttons">
+      <div id="menu-buttons" class="btn-group nav-item">
         <button><a href="../products/index.html">PRODUCTS</a></button>
         <button><a href="../seminars/index.html">SEMINARS</a></button>
         <button class="selected"><a href="index.html">HISTORY</a></button>
         <button><a href="../contact/index.html">CONTACT</a></button>
-      </nav>
-    </div>
-    <div class="content">
-      <div id="history">
-        <img id="building" class="family-image" src="../images/building.png" alt="545 N. Orianna St." title="545 N. Orianna St." data-number="0">
-        <div class="modal">
-          <img class="vertical zoomed" src="../images/building.png" alt="545 N. Orianna St." title="545 N. Orianna St.">
-          <button class="close">
-            X
-          </button>
+      </div>
+    </nav>
+    <div class="container-fluid content">
+      <div class="row">
+        <div class="col">
+          <h1 class="spaced">Our Company's Story</h1>
         </div>
-        Bruce and Linda Hoffman, the co-owners of NoBugs! and Center City Security Supplies, have lived in the greater Philadelphia area their whole lives.
-        Bruce's father, Edward Hoffman, started his own pest control company in 1935, selling homemade insecticides and cleaning compounds at 47 North 2nd Street.
-        Bruce worked with his father during his summers in high school and college in the 1960s. Ed moved his business to 3942 Frankford Avenue in 1968 and sold the company in 1976.
-        Bruce left a few years later before forming his own pest control and security supply company in 1983, at 1239 Vine Street. Bruce married Linda in 1989, and the two of them turned the business
-        into NoBugs! and Center City Security Supplies in 1990-1991 and moved to 545 North Orianna Street, their current location, in 1994.
-        Bruce and Linda have worked hard to make their customers part of their family,
-        <img id="loading-dock" class="family-image" src="../images/loading-dock.png" alt="Our loading dock" title="Our loading dock" data-number="1">
-        <div class="modal">
-          <img class="horizontal zoomed" src="../images/loading-dock.png" alt="Our loading dock" title="Our loading dock">
-          <button class="close">
-            X
-          </button>
+      </div>
+      <div class="row">
+        <div id="history" class="col">
+          Bruce and Linda Hoffman, the co-owners of NoBugs! and Center City Security Supplies, have lived in the greater Philadelphia area their whole lives.
+          Bruce's father, Edward Hoffman, started his own pest control supply company in 1935, selling homemade insecticides and cleaning compounds at 47 North 2nd Street.
+          <img id="building" class="family-image vertical" src="../images/building.png" alt="545 N. Orianna St." title="545 N. Orianna St." data-number="0">
+          <div class="modal">
+            <img class="vertical-zoomed" src="../images/building.png" alt="545 N. Orianna St." title="545 N. Orianna St.">
+            <button class="close">
+              X
+            </button>
+          </div>
+          Bruce worked with his father during his summers in high school and college in the 1960s. Ed moved his business to 3942 Frankford Avenue in 1968 and sold the company in 1976.
+          Bruce left a few years later before forming his own pest control and security supply company in 1983, at 1239 Vine Street. Bruce married Linda in 1989, and the two of them turned the business
+          into NoBugs! and Center City Security Supplies in 1990-1991 and moved to 545 North Orianna Street, their current location, in 1994.
+          Bruce and Linda have worked hard to make their customers part of their family,
+          <img id="loading-dock" class="family-image horizontal" src="../images/loading-dock.png" alt="Our loading dock" title="Our loading dock" data-number="1">
+          <div class="modal">
+            <img class="horizontal-zoomed" src="../images/loading-dock.png" alt="Our loading dock" title="Our loading dock">
+            <button class="close">
+              X
+            </button>
+          </div>
+          which started growing in the 1990s as they had two children: Esther and Stanley. Bruce and Linda would bring the kids to the office every day, and eventually they started
+          helping out with pest control seminars and stocking inventory as they got older.
+          The family still holds pest control seminars each year for exterminators to get their credits and grab a bite to eat (including the infamous "cakey" ice cream sandwiches and Linda's father's classic spaghetti recipe). As Linda says, "We may not be the largest company,
+          but we do try the hardest!"
         </div>
-        which started growing in the 1990s as they had two children: Esther and Stanley. Bruce and Linda would bring the kids to the office every day, and eventually they started
-        helping out with pest control seminars and stocking inventory as they got older.
-        The family still holds pest control seminars each year for exterminators to get their credits and grab a bite to eat (including the infamous "cakey" ice cream sandwiches and Linda's father's classic spaghetti recipe). As Linda says, "We may not be the largest company,
-        but we do try the hardest!"
       </div>
     </div>
-    <div id="footer">
-      <button><a class="footer-link" href="../products/index.html">PRODUCTS</a></button>
-      <button><a class="footer-link" href="../seminars/index.html">SEMINARS</a></button>
-      <button class="selected"><a class="footer-link" href="index.html">HISTORY</a></button>
-      <button><a class="footer-link" href="../contact/index.html">CONTACT</a></button>
-      <br>
+    <footer id="footer" class="footer flex-column justify-content-center">
+      <div class="btn-grp">
+        <button><a class="footer-link" href="../products/index.html">PRODUCTS</a></button>
+        <button><a class="footer-link" href="../seminars/index.html">SEMINARS</a></button>
+        <button class="selected"><a class="footer-link" href="index.html">HISTORY</a></button>
+        <button><a class="footer-link" href="../contact/index.html">CONTACT</a></button>
+      </div>
       <div id="footer-phone">
         <a class="footer-link" href="tel:12155927997">(215) 592-7997</a> | <a class="footer-link" href="tel:12155927997">(215) 592-0252</a>
       </div>
@@ -76,7 +85,10 @@
           <img id="crystalprism" src="../crystalprism.ico" alt="Crystal Prism™" title="Crystal Prism™">
         </a>
       </div>
-    </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="../main.js"></script>
   </body>
 </html>

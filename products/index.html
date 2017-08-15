@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="description" content="NoBugs! and Center City Security Supplies are family-owned pest control and security supply stores respectively, in Philadelphia, PA.">
     <meta name="keywords" content="pest control supplies, security supplies, Philadelphia, NoBugs, Center City">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Anton|Assistant:800|Carter+One|Londrina+Solid|Merriweather:900|Oswald:700|Piedra|Poppins:500|Ranchers|Stardos+Stencil:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abel|Armata|Cormorant+Garamond|Didact+Gothic|Hind+Vadodara|News+Cycle|Open+Sans|Pathway+Gothic+One|Poiret+One|Pontano+Sans|Questrial|Source+Sans+Pro" rel="stylesheet">
-    <link href="../style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style.css">
     <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -20,92 +21,107 @@
     <title>NoBugs!</title>
   </head>
   <body>
-    <div id="header">
-      <a href="../index.html">
+    <nav id="header" class="nav fixed-top justify-content-between">
+      <a class="nav-item" href="../index.html">
         <img id="logo" src="../images/logo.png" alt="Logo" title="NoBugs!">
       </a>
-      <nav id="menu-buttons">
+      <div id="menu-buttons" class="btn-group nav-item">
         <button class="selected"><a href="index.html">PRODUCTS</a></button>
         <button><a href="../seminars/index.html">SEMINARS</a></button>
         <button><a href="../history/index.html">HISTORY</a></button>
         <button><a href="../contact/index.html">CONTACT</a></button>
-      </nav>
-    </div>
-    <div class="content">
-      <div id="product-summary">
-        We have a warehouse full of pest control supplies, including professional chemicals, sprayers, rodenticides, traps and other products for:
-        <div id="product-content">
-          <table id="product-targets">
-            <tr>
-              <td>
-                Rats & Mice
-              </td>
-              <td>
-                <img src="../images/rat.png" alt="Rats & mice" title="Rats & mice">
-              </td>
-            </tr>
-            <tr>
-              <td>
-              Bedbugs
-              </td>
-              <td>
-                <img src="../images/bedbug.png">
-              </td>
-            </tr>
-            <tr>
-              <td>
-              Fleas
-              </td>
-              <td>
-                <img src="../images/flea.png" alt="Fleas" title="Fleas">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Roaches
-              </td>
-              <td>
-                <img src="../images/roach.png" alt="Roaches" title="Roaches">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Ants
-              </td>
-              <td>
-                <img src="../images/ant.png" alt="Ants" title="Ants">
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Wildlife
-              </td>
-              <td>
-                <img src="../images/wildlife.png" alt="Wildlife" title="Wildlife">
-              </td>
-            </tr>
-          </table>
-          <img id="warehouse" class="family-image" src="../images/warehouse.png" alt="Our warehouse" title="Our warehouse" data-number="0">
+      </div>
+    </nav>
+    <div class="container-fluid content">
+      <div class="row">
+        <div class="col">
+          <h1 class="spaced">Our Products</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <h2 class="spaced">
+            We have a warehouse full of pest control supplies for any customer, from individuals to large firms. If you need help, call us at <a class="link-important" href="tel:12155927997">(215) 592-7997</a> or visit us at <a class="link-important" href="../contact/index.html">545 North Orianna Street in Philadelphia, PA</a>. We carry professional chemicals, sprayers, rodenticides, traps and other products for:
+          </h2>
+        </div>
+      </div>
+      <div class="row justify-content-around padded">
+        <div class="col-auto my-auto">
+          <div class="row">
+            <div class="col-auto my-auto">
+              <h3 class="product-targets">Rats & Mice</h3>
+            </div>
+            <div class="col-auto my-auto product-targets">
+              <img class="target" src="../images/rat.png" alt="Rats & mice" title="Rats & mice">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-auto my-auto">
+              <h3 class="product-targets">Bedbugs</h3>
+            </div>
+            <div class="col-auto my-auto product-targets">
+              <img class="target" src="../images/bedbug.png">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-auto my-auto">
+              <h3 class="product-targets">Fleas</h3>
+            </div>
+            <div class="col-auto my-auto product-targets">
+              <img class="target" src="../images/flea.png" alt="Fleas" title="Fleas">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-auto my-auto">
+              <h3 class="product-targets">Roaches</h3>
+            </div>
+            <div class="col-auto my-auto product-targets">
+              <img class="target" src="../images/roach.png" alt="Roaches" title="Roaches">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-auto my-auto">
+              <h3 class="product-targets">Ants</h3>
+            </div>
+            <div class="col-auto my-auto product-targets">
+              <img class="target" src="../images/ant.png" alt="Ants" title="Ants">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-auto my-auto">
+              <h3 class="product-targets">Wildlife</h3>
+            </div>
+            <div class="col-auto my-auto product-targets">
+              <img class="target" src="../images/wildlife.png" alt="Wildlife" title="Wildlife">
+            </div>
+          </div>
+        </div>
+        <div class="col-auto my-auto">
+          <img class="family-image vertical" src="../images/warehouse.png" alt="Our warehouse" title="Our warehouse" data-number="0">
           <div class="modal">
-            <img class="vertical zoomed" src="../images/warehouse.png" alt="Our warehouse" title="Our warehouse" >
+            <img class="vertical-zoomed" src="../images/warehouse.png" alt="Our warehouse" title="Our warehouse" >
             <button class="close">
               X
             </button>
           </div>
         </div>
-        <div id="examples">
-          Our popular brands include <a href="https://www.bayer.com/en/products-from-a-to-z.aspx#activity-7943.7946.7947" target="_blank">Bayer</a>, <a href="http://www.syngentapmp.com/home" target="_blank">Syngenta</a>, <a href="http://www.liphatech.com/" target="_blank">Liphatech</a>, <a href="http://www.belllabs.com/" target="_blank">Bell Laboratories</a>, <a href="http://www.fmcprosolutions.com/PestControl.aspx" target="_blank">FMC</a>, <a href="http://www.catchmasterpro.com/" target="_blank">Atlantic Paste & Glue</a>, <a href="http://nisuscorp.com/" target="_blank">Nisus</a>, <a href="http://www.rockwelllabs.com/" target="_blank">Rockwell Labs</a> and <a href="http://www.jteaton.com/" target="_blank">J.T. Eaton</a>, among others.
-          <br>
-          We also carry extermination equipment, including <a href="http://bgequip.com/" target="_blank">B&G</a>.
+      </div>
+      <div class="row">
+        <div class="col">
+          <h3 class="spaced">
+            Our popular brands include <a class="link-important" href="https://www.bayer.com/en/products-from-a-to-z.aspx#activity-7943.7946.7947" target="_blank">Bayer</a>, <a class="link-important" href="http://www.syngentapmp.com/home" target="_blank">Syngenta</a>, <a class="link-important" href="http://www.belllabs.com/" target="_blank">Bell Laboratories</a>, <a class="link-important" href="http://www.fmcprosolutions.com/PestControl.aspx" target="_blank">FMC</a>, <a class="link-important" href="https://www.woodstream.com/" target="_blank">Woodstream</a>, <a class="link-important" href="http://nisuscorp.com/" target="_blank">Nisus</a>, <a class="link-important" href="http://www.rockwelllabs.com/" target="_blank">Rockwell Labs</a>, <a class="link-important" href="http://www.jteaton.com/" target="_blank">J.T. Eaton</a> and <a class="link-important" href="http://www.liphatech.com/" target="_blank">Liphatech</a>, among others.
+            We also carry extermination equipment from brands like <a class="link-important" href="http://bgequip.com/" target="_blank">B&G</a>.
+          </h3>
         </div>
       </div>
     </div>
-    <div id="footer">
-      <button class="selected"><a class="footer-link" href="index.html">PRODUCTS</a></button>
-      <button><a class="footer-link" href="../seminars/index.html">SEMINARS</a></button>
-      <button><a class="footer-link" href="../history/index.html">HISTORY</a></button>
-      <button><a class="footer-link" href="../contact/index.html">CONTACT</a></button>
-      <br>
+    <footer id="footer" class="footer flex-column justify-content-center">
+      <div class="btn-grp">
+        <button class="selected"><a class="footer-link" href="index.html">PRODUCTS</a></button>
+        <button><a class="footer-link" href="../seminars/index.html">SEMINARS</a></button>
+        <button><a class="footer-link" href="../history/index.html">HISTORY</a></button>
+        <button><a class="footer-link" href="../contact/index.html">CONTACT</a></button>
+      </div>
       <div id="footer-phone">
         <a class="footer-link" href="tel:12155927997">(215) 592-7997</a> | <a class="footer-link" href="tel:12155927997">(215) 592-0252</a>
       </div>
@@ -117,7 +133,10 @@
           <img id="crystalprism" src="../crystalprism.ico" alt="Crystal Prism™" title="Crystal Prism™">
         </a>
       </div>
-    </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script src="../main.js"></script>
   </body>
 </html>
