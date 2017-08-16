@@ -1,5 +1,6 @@
 body {
   font-family: 'Abel', sans-serif;
+  color: #000000;
   text-align: center;
   user-select: none;
   cursor: default;
@@ -142,13 +143,17 @@ h2.homepage {
 
 .shrink #logo {
   height: 8vw !important;
+  max-height: 80px;
   width: 24vw;
+  max-width: 240px;
   transition: all 0.4s;
 }
 
 .shrink:hover #logo {
   height: 10vw !important;
+  max-height: 100px;
   width: 30vw !important;
+  max-width: 300px;
   transition: all 0.4s;
 }
 
@@ -402,6 +407,10 @@ iframe {
   padding-bottom: 3px;
   opacity: 1;
   transition: all 0.4s;
+}
+
+#footer button:hover {
+  color: inherit !important;
 }
 
 .footer-link {
