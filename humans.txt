@@ -1,0 +1,13 @@
+/* TEAM */
+Developer: Esther Hoffman
+Contact: hoffman.esther@gmail.com
+Location: Philadelphia, USA
+
+/* SITE */
+Site name: NoBugs!
+Site URL: https://nobugsphilly.com
+Web design: Esther Hoffman
+Contact: https://crystalprism.io
+Location: USA
+Built with: HTML5, CSS3, JavaScript, Bootstrap
+Launched: 2017
