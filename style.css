@@ -1,9 +1,18 @@
 body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   font-family: 'Abel', sans-serif;
   color: #000000;
   text-align: center;
   user-select: none;
   cursor: default;
+}
+
+#main-wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 ::selection {
@@ -182,6 +191,7 @@ h2.homepage {
   margin-top: 17vw;
   margin-bottom: 5vw;
   user-select: text;
+  flex: 1;
   flex-wrap: wrap;
 }
 
