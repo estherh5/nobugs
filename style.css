@@ -426,6 +426,10 @@ iframe {
   transition: all 0.4s;
 }
 
+#esther {
+  font-size: 8px;
+}
+
 @media only screen and (min-width: 568px) {
   h1.homepage {
     font-size: 30px;
@@ -473,6 +477,10 @@ iframe {
 
   #crystalprism {
     height: 30px;
+  }
+
+  #esther {
+    font-size: 10px;
   }
 }
 
@@ -551,5 +559,9 @@ iframe {
 
   #crystalprism {
     height: 35px;
+  }
+
+  #esther {
+    font-size: 12px;
   }
 }
