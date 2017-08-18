@@ -78,7 +78,9 @@ button:hover, a:hover, #footer img:hover {
 }
 
 button.homepage {
-  font-size: 10px;
+  margin-left: 0px;
+  margin-right: 0px;
+  font-size: 11px;
   opacity: 1;
 }
 
@@ -121,17 +123,8 @@ h2.homepage {
   position: fixed;
   background-color: #e6e5e5;
   transition: all 0.4s;
-  z-index: 1;
-}
-
-#header.shrink {
   opacity: 0.8;
-  transition: all 0.4s;
-}
-
-#header.shrink:hover {
-  opacity: 1;
-  transition: all 0.4s;
+  z-index: 1;
 }
 
 #logo {
@@ -187,6 +180,7 @@ h2.homepage {
 }
 
 .content {
+  width: 100vw;
   max-width: 700px;
   margin-top: 17vw;
   margin-bottom: 5vw;
@@ -452,6 +446,8 @@ iframe {
   }
 
   button.homepage {
+    margin-left: 5px;
+    margin-right: 5px;
     font-size: 18px;
   }
 
@@ -506,7 +502,9 @@ iframe {
   }
 
   button.homepage {
-    font-size: 22px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 25px;
   }
 
   h2.homepage {
