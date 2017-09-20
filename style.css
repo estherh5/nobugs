@@ -23,6 +23,28 @@ body {
   box-shadow: 1px 1px 1px 1px;
 }
 
+a {
+  outline: none;
+  text-decoration: none !important;
+  color: inherit;
+  cursor: pointer;
+}
+
+a:active, a:focus {
+  color: inherit;
+}
+
+.link-important {
+  font-weight: bold;
+  color: #d61f1f;
+  opacity: 0.7;
+}
+
+.link-important:hover {
+  color: #d61f1f !important;
+  opacity: 1;
+}
+
 #logo-big {
   width: 70%;
   max-width: 600px;
@@ -81,29 +103,25 @@ button.homepage {
   margin-left: 0px;
   margin-right: 0px;
   font-size: 11px;
-  opacity: 1;
-}
-
-a {
-  outline: none;
-  text-decoration: none !important;
-  color: inherit;
-  cursor: pointer;
-}
-
-a:active, a:focus {
-  color: inherit;
-}
-
-.link-important {
   font-weight: bold;
   color: #d61f1f;
   opacity: 0.7;
 }
 
-.link-important:hover {
+button.homepage:hover {
   color: #d61f1f !important;
   opacity: 1;
+}
+
+h2 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.padded {
+  padding: 10px;
 }
 
 h2.homepage {
@@ -196,17 +214,6 @@ h1 {
 
 .spaced {
   line-height: 1.5;
-}
-
-h2 {
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-size: 16px;
-  font-weight: normal;
-}
-
-.padded {
-  padding: 10px;
 }
 
 h3 {
@@ -425,7 +432,8 @@ iframe {
 #footer button {
   padding: 0px;
   padding-bottom: 3px;
-  opacity: 1;
+  font-size: 9px;
+  opacity: 0.6;
   transition: all 0.4s;
 }
 
@@ -489,11 +497,7 @@ iframe {
     flex-direction: row;
   }
 
-  #footer {
-    font-size: 12px;
-  }
-
-  .footer-link {
+  #footer, #footer button, .footer-link {
     font-size: 12px;
   }
 
@@ -572,11 +576,7 @@ iframe {
     padding-right: 80px;
   }
 
-  #footer {
-    font-size: 14px;
-  }
-
-  .footer-link {
+  #footer, #footer button, .footer-link {
     font-size: 14px;
   }
 
