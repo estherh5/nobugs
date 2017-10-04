@@ -10,7 +10,11 @@ body {
 }
 
 ::selection {
-  background: #bacfff;
+  background-color: #bacfff;
+}
+
+::-moz-selection {
+  background-color: #bacfff;
 }
 
 #main-row {
@@ -324,8 +328,26 @@ h3 {
   transition: all 0.4s;
 }
 
-#reminder {
+#next-year {
+  font-weight: bold;
+  color: #d61f1f;
+}
+
+#break {
+  height: 1px;
+  width: 80vw;
   margin-top: 20px;
+  top: .7em;
+  left: 0;
+  align-self: center;
+  background-color: #ccc;
+  content: "";
+  z-index: -100;
+}
+
+#reference {
+  margin-top: 5px;
+  font-style: italic;
 }
 
 .seminar-info {
