@@ -5,10 +5,14 @@
     <meta name="description" content="NoBugs! is a family-owned pest control supply store in Philadelphia, PA.">
     <meta name="keywords" content="pest control supplies, Philadelphia, NoBugs, Northern Liberties, do it yourself">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Google Fonts, Bootstrap, and CSS stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Google Analytics script to track page views -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -17,49 +21,68 @@
       ga('create', 'UA-91236421-2', 'auto');
       ga('send', 'pageview');
     </script>
+
     <title>NoBugs!</title>
   </head>
-  <body style="height: 100vh; background-color: #e6e5e5;">
-    <div class="container-fluid h-100 align-items-center d-flex justify-content-center">
+  <body class="homepage">
+
+    <!-- Main page container -->
+    <div class="container-fluid align-items-center d-flex justify-content-center">
       <div id="main-row" class="row no-gutters align-items-center justify-content-center">
         <div class="col">
+
+          <!-- Company logo with link to Products page -->
           <div class="row no-gutters">
             <div class="col">
-              <a href="products/index.html">
+              <a href="products/index.html" class="d-flex flex-column align-items-center justify-content-center">
                 <img id="logo-big" src="images/logo.png" alt="Logo" title="NoBugs!">
               </a>
             </div>
           </div>
+
+          <!-- Company description -->
           <div class="row no-gutters">
             <div class="col">
               <h1 class="homepage">pest control supplies</h1>
             </div>
           </div>
-          <div class="row no-gutters justify-content-center">
+
+          <!-- Navigation links -->
+          <div class="row my-1 no-gutters justify-content-center">
             <div class="col-auto">
-              <button onclick="window.location = 'products/index.html';" class="homepage">PRODUCTS</button>
+              <a class="homepage" href="products/index.html">PRODUCTS</a>
             </div>
             <div class="col-auto">
-              <button onclick="window.location = 'seminars/index.html';" class="homepage">SEMINARS</button>
+              <a class="homepage" href="seminars/index.html">SEMINARS</a>
             </div>
             <div class="col-auto">
-              <button onclick="window.location = 'history/index.html';" class="homepage">HISTORY</button>
+              <a class="homepage" href="history/index.html">HISTORY</a>
             </div>
             <div class="col-auto">
-              <button onclick="window.location = 'contact/index.html';" class="homepage">CONTACT</button>
+              <a class="homepage" href="contact/index.html">CONTACT</a>
             </div>
           </div>
+
+          <!-- Contact information -->
           <div class="row no-gutters">
             <div class="col">
-              <h2 class="homepage"><a href="tel:12155927997">(215) 592-7997</a> | <a href="contact/index.html">545 North Orianna Street, Philadelphia, PA</a></h2>
+              <h2 class="homepage">
+                <a href="tel:12155927997">(215) 592-7997</a> | <a href="contact/index.html">545 North Orianna Street, Philadelphia, PA</a>
+              </h2>
             </div>
           </div>
+
         </div>
       </div>
     </div>
+
+    <!-- Bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <!-- Main JS script -->
     <script src="main.js"></script>
+
   </body>
 </html>

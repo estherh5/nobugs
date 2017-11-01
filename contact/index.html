@@ -5,10 +5,14 @@
     <meta name="description" content="NoBugs! is located at 545 North Orianna Street in Northern Liberties, Philadelphia, PA.">
     <meta name="keywords" content="pest control supplies, Philadelphia, NoBugs, Northern Liberties, 545 North Orianna Street">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <!-- Google Fonts, Bootstrap, and CSS stylesheets -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abel">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+
+    <!-- Google Analytics script to track page views -->
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -16,39 +20,57 @@
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-91236421-2', 'auto');
       ga('send', 'pageview');
-    </script>    <title>NoBugs!</title>
+    </script>
+
+    <title>NoBugs!</title>
   </head>
   <body>
-    <div id="main-wrapper">
+
+    <!-- Main page container -->
+    <div id="main-container" class="d-flex flex-column">
+
+      <!-- Page header with logo and navigation links -->
       <nav id="header" class="nav fixed-top justify-content-between">
         <a class="nav-item" href="../index.html">
           <img id="logo" src="../images/logo.png" alt="Logo" title="NoBugs!">
         </a>
-        <div id="menu-buttons" class="btn-group nav-item">
-          <button onclick="window.location = '../products/index.html';">PRODUCTS</button>
-          <button onclick="window.location = '../seminars/index.html';">SEMINARS</button>
-          <button onclick="window.location = '../history/index.html';">HISTORY</button>
-          <button onclick="window.location = '../contact/index.html';" class="selected">CONTACT</button>
+        <div id="menu-links" class="nav-item d-flex align-items-center">
+          <a class="nav-link" href="../products/index.html">PRODUCTS</a>
+          <a class="nav-link" href="../seminars/index.html">SEMINARS</a>
+          <a class="nav-link" href="../history/index.html">HISTORY</a>
+          <a class="nav-link selected" href="index.html">CONTACT</a>
         </div>
       </nav>
+
+      <!-- Main page content -->
       <div class="container-fluid content">
+
+        <!-- Contact information header -->
         <div id="contact-row" class="row">
           <div id="contact-information" class="col">
             <h1 class="spaced">Our Location</h1>
+
+            <!-- Company location -->
             <div id="visit">
               Visit us at 545 North Orianna Street in Northern Liberties, Philadelphia, PA. We are located between 3rd and 4th Streets off of Spring Garden Street.
               If you are outside the area, we can ship supplies to you through FedEx.
             </div>
+
+            <!-- Company phone numbers -->
             <div id="phone">
               <br>
               Call us at <b><a href="tel:12155927997">(215) 592-7997</a></b> or
               <br>
               <b><a href="tel:12155920252">(215) 592-0252</a></b>.
             </div>
+
+            <!-- Company email address -->
             <div id="email">
               <br>
               Email us at <b><a href="mailto:nobugspestcontrol@gmail.com">nobugspestcontrol@gmail.com</a></b>.
             </div>
+
+            <!-- Company hours -->
             <div id="hours">
               <br>
               <b id="hours-title">Hours</b>
@@ -59,18 +81,24 @@
               <br>
               <b>Sunday:</b> Closed
             </div>
+
           </div>
+
+          <!-- Google Maps iFrame -->
           <div class="col">
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d24464.8836790789!2d-75.1569350942708!3d39.961283000000016!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb5381159b22f2ef0!2sNobugs!5e0!3m2!1sen!2sus!4v1502575923347&&z-" allowfullscreen></iframe>
           </div>
+
         </div>
       </div>
+
+      <!-- Page footer with navigation links, contact information, and creator information -->
       <footer id="footer" class="footer flex-column justify-content-center">
-        <div class="btn-grp">
-          <button onclick="window.location = '../products/index.html';">PRODUCTS</button>
-          <button onclick="window.location = '../seminars/index.html';">SEMINARS</button>
-          <button onclick="window.location = '../history/index.html';">HISTORY</button>
-          <button onclick="window.location = '../contact/index.html';" class="selected">CONTACT</button>
+        <div class="nav justify-content-center">
+          <a class="nav-link" href="../products/index.html">PRODUCTS</a>
+          <a class="nav-link" href="../seminars/index.html">SEMINARS</a>
+          <a class="nav-link" href="../history/index.html">HISTORY</a>
+          <a class="nav-link selected" href="index.html">CONTACT</a>
         </div>
         <div id="footer-phone">
           <a class="footer-link" href="tel:12155927997">(215) 592-7997</a> | <a class="footer-link" href="tel:12155920252">(215) 592-0252</a>
@@ -82,10 +110,16 @@
           <a id="esther" class="footer-link" href="mailto:hoffman.esther@gmail.com">Made by Esther Hoffman</a>
         </div>
       </footer>
+
     </div>
+
+    <!-- Bootstrap scripts -->
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <!-- Main JS script -->
     <script src="../main.js"></script>
+
   </body>
 </html>
