@@ -437,6 +437,10 @@ h3 {
   text-decoration: underline;
 }
 
+.holiday {
+  color: #d61f1f;
+}
+
 iframe {
   height: 45vw;
   min-height: 200px;
