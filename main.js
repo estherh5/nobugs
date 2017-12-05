@@ -47,8 +47,8 @@ for (var i = 0; i < images.length; i++) {
 }
 
 
-// Hide zoomed-in image when user clicks outside of image in modal,
-// clicks close button, or clicks escape key when modal is displayed
+/* Hide zoomed-in image when user clicks outside of image in modal,
+clicks close button, or clicks escape key when modal is displayed */
 modal.onclick = function(e) {
   if (e.target == modal) {
     modal.classList.remove('modal-display');
