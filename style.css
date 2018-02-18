@@ -488,10 +488,6 @@ iframe {
   transition: all 0.3s;
 }
 
-#esther {
-  font-size: 8px;
-}
-
 @media only screen and (min-width: 568px) {
   a.homepage {
     margin-left: 13px;
@@ -563,10 +559,6 @@ iframe {
   #crystalprism {
     height: 30px;
   }
-
-  #esther {
-    font-size: 10px;
-  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -631,9 +623,5 @@ iframe {
 
   #crystalprism {
     height: 35px;
-  }
-
-  #esther {
-    font-size: 12px;
   }
 }
