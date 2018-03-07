@@ -342,9 +342,19 @@ h3 {
   transition: all 0.3s;
 }
 
-#next-year {
+.future {
+  margin-top: 10px;
+  margin-bottom: 10px;
   font-weight: bold;
   color: #d61f1f;
+}
+
+#schedule {
+  display: inline-block;
+}
+
+#schedule li {
+  text-align: left;
 }
 
 #break {
