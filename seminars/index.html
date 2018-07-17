@@ -26,6 +26,11 @@
   </head>
   <body>
 
+    <!-- Hidden modal -->
+    <div id="modal">
+      <button id="close">&times;</button>
+    </div>
+
     <!-- Main page container -->
     <div id="main-container" class="d-flex flex-column">
 
@@ -260,8 +265,18 @@
 
       </div>
 
-      <!-- Page footer with navigation links, contact information, and creator information -->
+      <!-- Page footer with mailing list sign-up, navigation links, contact information, and creator information -->
       <footer id="footer" class="footer flex-column justify-content-center">
+        <div class="p-10">
+          <div class="col d-flex flex-row align-items-center justify-content-center">
+            <input id="email-input" type="email" placeholder="Email address">
+            <button id="submit">Join Our Mailing List</button>
+          </div>
+          <div id="invalid-error">Please enter a valid email address.</div>
+          <div id="server-error">Your email could not be added at this time. Please try again soon.</div>
+          <div id="already">You are already on our mailing list!</div>
+          <div id="success">Thanks for signing up!</div>
+        </div>
         <div class="nav justify-content-center">
           <a class="nav-link" href="../products/">PRODUCTS</a>
           <a class="nav-link selected" href=".">SEMINARS</a>

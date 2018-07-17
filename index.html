@@ -26,6 +26,11 @@
   </head>
   <body class="homepage">
 
+    <!-- Hidden modal -->
+    <div id="modal">
+      <button id="close">&times;</button>
+    </div>
+
     <!-- Main page container -->
     <div class="container-fluid align-items-center d-flex justify-content-center">
       <div id="main-row" class="row no-gutters align-items-center justify-content-center">
@@ -70,6 +75,18 @@
                 <a href="tel:12155927997">(215) 592-7997</a> | <a href="contact/">545 North Orianna Street, Philadelphia, PA</a>
               </h2>
             </div>
+          </div>
+
+          <!-- Mailing list sign-up -->
+          <div class="row pt-10 no-gutters d-flex flex-column">
+            <div class="col d-flex flex-row align-items-center justify-content-center flex-1">
+              <input id="email-input" type="email" placeholder="Email address">
+              <button id="submit">Join Our Mailing List</button>
+            </div>
+            <div id="invalid-error">Please enter a valid email address.</div>
+            <div id="server-error">Your email could not be added at this time. Please try again soon.</div>
+            <div id="already">You are already on our mailing list!</div>
+            <div id="success">Thanks for signing up!</div>
           </div>
 
         </div>

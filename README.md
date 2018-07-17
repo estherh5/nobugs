@@ -3,7 +3,7 @@
 ## Background
 ![NoBugs!](images/logo-small.png)
 
-NoBugs! is a pest control supply company in Philadelphia, PA. My father founded the company in 1983, inspired by his father's pest control supply business founded in 1935. My parents now co-own the company and have largely kept their business off of the internet, advertising through paper and word of mouth. I created this website to help them advertise online and generate more business from a wider audience.
+NoBugs! is a pest control supply company in Philadelphia, PA. My father founded the company in 1983, inspired by his father's pest control supply business founded in 1935. My parents now co-own the company and have largely kept their business off of the internet, advertising through paper and word of mouth. I created this website to help them advertise online and generate more business from a wider audience. Visitors can sign up for the business mailing list on each page of the site, and their email addresses get stored on a Google Sheets spreadsheet that the owners use to keep track of their customer base via the [Google Sheets API](https://developers.google.com/sheets/api/).
 
 ## Implementation
 I began the NoBugs! website implementation by outlining a basic implementation plan:

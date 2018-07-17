@@ -16,6 +16,13 @@ body.homepage {
   line-height: 1.5;
 }
 
+:focus {
+  outline-color: inherit !important;
+  outline-style: solid !important;
+  outline-width: 1px !important;
+  outline-offset: -1px !important;
+}
+
 .homepage .container-fluid {
   height: 100vh;
 }
@@ -109,6 +116,65 @@ h2.homepage {
   font-size: 8px;
   font-weight: bold;
   line-height: 2;
+}
+
+.pt-10 {
+  padding-top: 10px;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+input {
+  width: 100px;
+  padding: 3px;
+  border-color: #e6e5e5;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-style: solid;
+  border-width: 1px;
+  margin-left: 5px;
+  font-family: 'Abel', sans-serif;
+  font-size: 7px;
+}
+
+button {
+  padding: 3px;
+  border-color: #2a7fff;
+  border-style: solid;
+  border-width: 1px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: #2a7fff;
+  font-family: 'Abel', sans-serif;
+  font-size: 7px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:hover, button:active {
+  background-color: #0066ff;
+}
+
+input:disabled, button:disabled {
+  cursor: not-allowed;
+  opacity: 1 !important;
+}
+
+#invalid-error, #server-error {
+  display: none;
+  visibility: hidden;
+  color: #d61f1f;
+}
+
+#already {
+  display: none;
+}
+
+#already, #success {
+  visibility: hidden;
+  color: #00af00;
 }
 
 #modal {
@@ -236,7 +302,7 @@ h2.homepage {
   opacity: 0.7;
 }
 
-.link-important:hover {
+.link-important:hover, .link-important:focus {
   color: #d61f1f !important;
   opacity: 1;
 }
@@ -471,6 +537,30 @@ iframe {
   z-index: 1;
 }
 
+.p-10 {
+  padding: 10px;
+}
+
+#footer input {
+  padding: 5px;
+  border-color: #ffffff;
+  height: 25px;
+  width: 130px;
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+#footer button {
+  padding: 5px;
+  height: 25px;
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+#footer input:hover, #footer input:focus, #footer button:hover, #footer button:focus {
+  opacity: 1;
+}
+
 #footer .nav-link {
   padding-top: 3px;
   padding-bottom: 3px;
@@ -512,6 +602,15 @@ iframe {
   h2.homepage {
     font-size: 15px;
     line-height: 3;
+  }
+
+  input {
+    width: 170px;
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
   }
 
   .nav-link {
@@ -562,6 +661,17 @@ iframe {
     flex-direction: row;
   }
 
+  #footer input {
+    height: 27px;
+    width: 170px;
+    font-size: 13px;
+  }
+
+  #footer button {
+    height: 27px;
+    font-size: 13px;
+  }
+
   #footer, #footer .nav-link, .footer-link {
     font-size: 12px;
   }
@@ -588,6 +698,17 @@ iframe {
 
   h2, h2.homepage {
     font-size: 18px;
+  }
+
+  input {
+    padding: 5px;
+    width: 200px;
+    font-size: 15px;
+  }
+
+  button {
+    padding: 5px;
+    font-size: 15px;
   }
 
   .nav-link {
@@ -625,6 +746,17 @@ iframe {
   .seminar-agenda {
     padding-left: 60px;
     padding-right: 60px;
+  }
+
+  #footer input {
+    height: 30px;
+    width: 200px;
+    font-size: 16px;
+  }
+
+  #footer button {
+    height: 30px;
+    font-size: 16px;
   }
 
   #footer, #footer .nav-link, .footer-link {
