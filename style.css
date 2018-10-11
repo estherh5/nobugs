@@ -407,6 +407,11 @@ h3 {
   transition: all 0.3s;
 }
 
+#next-year {
+  font-weight: bold;
+  color: #d61f1f;
+}
+
 .future {
   margin-top: 10px;
   margin-bottom: 10px;
