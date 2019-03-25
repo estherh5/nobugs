@@ -285,6 +285,7 @@ input:disabled, button:disabled {
   margin-top: 17vw;
   margin-bottom: 5vw;
   flex-wrap: wrap;
+  flex: 1;
   -webkit-flex-wrap: wrap;
   -ms-flex-wrap: wrap;
   user-select: text;
