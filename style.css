@@ -294,6 +294,7 @@ input:disabled, button:disabled {
 
 .spaced {
   line-height: 1.5;
+  margin-bottom: 20px;
 }
 
 .link-important {
@@ -443,7 +444,6 @@ h3 {
 #break {
   height: 1px;
   width: 80vw;
-  margin-top: 20px;
   top: 0.7em;
   left: 0;
   align-self: center;
