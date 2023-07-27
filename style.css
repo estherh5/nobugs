@@ -297,6 +297,12 @@ input:disabled, button:disabled {
   margin-bottom: 20px;
 }
 
+.spaced-banner {
+  line-height: 1.5;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .link-important {
   font-weight: bold;
   color: #d61f1f;
