@@ -33,3 +33,19 @@ Throughout the process, I solicited feedback on the design and content from the 
 
 ## Marketing
 Once we launched the website, I claimed the NoBugs! listings on Google, Facebook, Yellowpages, and various pest control supply directories. I updated the information on these listings to include the new website, as well as correct contact information and pictures where appropriate. I purchased stickers on [Sticker Mule](https://www.stickermule.com) for the business owners to share with their customers and distribute around the neighborhood.
+
+## Holiday hours
+The six annual closures — New Year's Day, Memorial Day, Independence Day, Labor Day, Thanksgiving and Christmas — post themselves on the Contact page. `holidays.js` works each date out for whatever year it is, shows the notice for the seven days leading up to the closure and through the day itself, then clears it. Christmas and New Year's are seven days apart, so both appear together during that week. Nothing needs doing each year.
+
+For anything outside those six — a snow day, an early close, a shortened Christmas Eve — add a line to the `ONE_OFFS` list at the top of `holidays.js`:
+
+```js
+var ONE_OFFS = [
+  { date: '2027-01-04', text: 'Monday, January 4: Closed due to snow' },
+  { from: '2027-02-01', to: '2027-02-14', text: 'Temporarily 7:15 AM - 5:30 PM - call first' }
+];
+```
+
+A one-off follows the same seven-day run-up and clears itself once the date has passed, so an entry left behind does no harm.
+
+Dates are read on the shop's clock in Philadelphia, not the visitor's, and with JavaScript turned off the hours block simply shows the regular hours. Run `node test/holidays.test.js` after any change.

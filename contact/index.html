@@ -91,8 +91,8 @@
             <b>Saturday:</b> 9:30 AM - 2:30 PM
             <br>
             <b>Sunday:</b> Closed
-            <br>
-            <b class="special"></b>
+            <!-- Holiday closures are filled in here automatically by holidays.js -->
+            <span id="special-hours"></span>
           </div>
 
         </div>
@@ -159,6 +159,9 @@
 
   <!-- Main JS script -->
   <script src="../main.js"></script>
+
+  <!-- Posts holiday hours on their own, a week ahead of each closure -->
+  <script src="../holidays.js"></script>
 
 </body>
 
