@@ -7,7 +7,7 @@ _Nothing outstanding._
 - **Automatic holiday hours** (2026-08) — the six annual closures post and clear themselves on the Contact page; one-offs like snow days go in the `ONE_OFFS` list in `holidays.js`. Replaces roughly eighty hand-edits made since 2018.
 
 ## Declined
-_Nothing yet._
+- **Automating Christmas Eve and New Year's Eve hours** (decided 2026-09) — the shop ran reduced hours only once in 2017–2025 (both eves 7:30 AM - 2:00 PM in 2021) and normal hours every other year, so any automated rule would post wrong hours most years. No `ONE_OFFS` entry means normal hours; add one only in a year the shop shortens an eve.
 
 ## Open questions
-- Christmas Eve and New Year's Eve are deliberately not automated: the shop has run them as reduced hours some years and as normal hours others. They stay a per-year decision, added to `ONE_OFFS` when wanted.
+_Nothing open._
