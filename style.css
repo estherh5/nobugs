@@ -611,6 +611,96 @@ iframe {
   transition: all 0.3s;
 }
 
+/* Fire alarms page (Center City Security Supplies) */
+.sister-name {
+  margin-bottom: 4px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: #d61f1f;
+}
+
+.alarm-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px 24px;
+  margin: 10px auto 34px;
+  padding: 0;
+  list-style: none;
+}
+
+.alarm {
+  width: 132px;
+}
+
+.alarm svg {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 8px;
+  stroke: #000000;
+  stroke-width: 1.6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.75;
+  transition: all 0.3s;
+}
+
+.alarm:hover svg {
+  opacity: 1;
+  stroke: #d61f1f;
+}
+
+.alarm h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  text-shadow: 0.1px 0.1px #000000;
+}
+
+.alarm-intro, .brands {
+  text-wrap: pretty;
+}
+
+.brands {
+  max-width: 560px;
+  margin: 0 auto 34px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.same-shop {
+  max-width: 520px;
+  margin: 0 auto 30px;
+  padding: 18px 20px;
+  background-color: #f2f1f1;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.same-shop b {
+  font-size: 18px;
+}
+
+/* Six nav links fit a 320px phone only with tighter spacing */
+@media only screen and (max-width: 567px) {
+  #logo {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .nav-link {
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  a.homepage {
+    margin-left: 3px;
+    margin-right: 3px;
+  }
+}
+
 @media only screen and (min-width: 568px) {
   a.homepage {
     margin-left: 13px;
@@ -788,5 +878,15 @@ iframe {
 
   #crystalprism {
     height: 35px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .sister-name {
+    font-size: 15px;
+  }
+
+  .alarm {
+    width: 140px;
   }
 }
