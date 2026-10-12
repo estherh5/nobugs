@@ -1,0 +1,3 @@
+# The security page lived at /fire-alarms/ for its first hour
+/fire-alarms/*  /security/  301
+/fire-alarms    /security/  301
