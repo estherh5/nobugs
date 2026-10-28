@@ -238,8 +238,12 @@ input:disabled, button:disabled {
   padding: 0;
   border: none;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.72);
+  background-color: rgba(0, 0, 0, 0.88);
   cursor: pointer;
+}
+
+a[href^="tel:"] {
+  white-space: nowrap;
 }
 
 #modal[open] {
@@ -561,7 +565,7 @@ h3 {
 #history {
   font-size: 14px;
   line-height: 1.5;
-  text-align: justify;
+  text-align: left;
 }
 
 #building {
@@ -579,10 +583,12 @@ h3 {
   max-width: 300px;
 }
 
+/* Stacks under the storefront photo, so the story runs in one steady column */
 #loading-dock {
   margin-top: 10px;
-  margin-right: 15px;
-  float: left;
+  margin-left: 15px;
+  float: right;
+  clear: right;
 }
 
 #contact-row {
@@ -628,7 +634,7 @@ iframe {
   border-width: 5px;
 }
 
-iframe:focus-visible {
+iframe:focus {
   outline: 2px solid #2a7fff;
   outline-offset: 2px;
 }
