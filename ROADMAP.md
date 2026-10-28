@@ -5,6 +5,7 @@
 _Nothing queued._
 
 ## Shipped
+- **Calmer brick accent, readable seminars, visible pest icons, no Bootstrap** (2026-10) — links and the mailing-list button move from bright red to brick; seminar schedule text 13→15px with PA/NJ credits in aligned columns; Products shows each pest's icon beside its name; the 147 KB render-blocking Bootstrap CDN stylesheet replaced by the 5 KB of it the pages use.
 - **Whole-app critique + audit, every page on desktop and phone** (2026-10) — readable phone layout (text was 7-11px), 44px tap targets, signup shows "Joining…" while sending and offers Try again on failure, keyboard photo viewer, focus ring, `lang`/landmarks/skip link, branded 404 page; pages 5.7 MB lighter (photos and logo resized, dead Universal Analytics tag and unused Bootstrap JS removed) — impeccable 25/32, 2026-10-28
 - **Center City Security Supplies Google listing points at `/security/`** (2026-10) — the listing's Website field now sends searchers to `https://nobugsphilly.com/security/`.
 - **Fire alarms page for Center City Security Supplies** (2026-10) — `/security/` advertises the sister business's fire alarm equipment (panels, horn strobes, detectors, pull stations, emergency lights, wire and batteries; Edwards Kidde, Gentex, System Sensor, Fire-Lite, Silent Knight), linked from every page's nav and the homepage. Copy approved by the family.

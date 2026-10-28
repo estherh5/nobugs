@@ -215,14 +215,15 @@ body.homepage {
   line-height: 1.5;
 }
 
-/* One focus ring for every control, drawn only for keyboard focus, in the
-deep brand red (6.7:1 on the footer gray, 9.3:1 on white) */
+/* Accent: brick #a8443a (5.9:1 on white) for links and the signup button;
+deep brick #7d2f28 (6.6:1 on the footer gray) for hover, errors and the
+keyboard focus ring, which is drawn only for keyboard focus */
 :focus {
   outline: none;
 }
 
 :focus-visible {
-  outline: 2px solid #8f1313;
+  outline: 2px solid #7d2f28;
   outline-offset: 2px;
 }
 
@@ -261,7 +262,7 @@ a:active, a:focus {
 }
 
 a:hover, #footer img:hover {
-  color: #b31b1b !important;
+  color: #7d2f28 !important;
   filter: grayscale(0%);
   opacity: 1 !important;
   transition: all 0.3s;
@@ -273,12 +274,12 @@ a.homepage {
   margin-right: 5px;
   font-size: 11px;
   font-weight: bold;
-  color: #c41c1c !important;
+  color: #a8443a !important;
   line-height: 1.5;
 }
 
 a.homepage:hover {
-  color: #8f1313 !important;
+  color: #7d2f28 !important;
 }
 
 #logo-big {
@@ -340,15 +341,15 @@ input {
   font-size: 7px;
 }
 
-/* Brand red with white text (5.95:1); hover and busy deepen it (9.3:1) */
+/* Brick with white text (5.9:1); hover and busy deepen it (9.1:1) */
 button {
   padding: 3px;
-  border-color: #c41c1c;
+  border-color: #a8443a;
   border-style: solid;
   border-width: 1px;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-  background-color: #c41c1c;
+  background-color: #a8443a;
   font-family: 'Abel', sans-serif;
   font-size: 7px;
   color: #ffffff;
@@ -356,8 +357,8 @@ button {
 }
 
 button:hover, button:active {
-  border-color: #8f1313;
-  background-color: #8f1313;
+  border-color: #7d2f28;
+  background-color: #7d2f28;
 }
 
 input:disabled, button:disabled {
@@ -368,8 +369,8 @@ input:disabled, button:disabled {
 /* Sending: the button says so and spins; the page stays usable */
 #submit.busy {
   cursor: progress;
-  border-color: #8f1313;
-  background-color: #8f1313;
+  border-color: #7d2f28;
+  background-color: #7d2f28;
 }
 
 #submit.busy::before {
@@ -410,7 +411,7 @@ input:disabled, button:disabled {
 }
 
 #invalid-error, #server-error {
-  color: #b31b1b;
+  color: #7d2f28;
 }
 
 #already, #success {
@@ -430,7 +431,7 @@ input:disabled, button:disabled {
 
 #retry:hover {
   background: none;
-  color: #8f1313;
+  color: #7d2f28;
 }
 
 #modal {
@@ -531,11 +532,11 @@ a[href^="tel:"] {
   font-size: 10px;
 }
 
-/* You are here: the current page's nav link is underlined in the brand red */
+/* You are here: the current page's nav link is underlined in brick */
 .selected {
   font-weight: bold;
   text-decoration: underline !important;
-  text-decoration-color: #c41c1c !important;
+  text-decoration-color: #a8443a !important;
   text-decoration-thickness: 2px !important;
   text-underline-offset: 5px;
 }
@@ -590,11 +591,11 @@ a[href^="tel:"] {
 
 .link-important {
   font-weight: bold;
-  color: #c41c1c;
+  color: #a8443a;
 }
 
 .link-important:hover {
-  color: #8f1313 !important;
+  color: #7d2f28 !important;
 }
 
 #middle-row {
@@ -697,14 +698,14 @@ h3 {
 
 #next-year {
   font-weight: bold;
-  color: #d61f1f;
+  color: #a8443a;
 }
 
 .future {
   margin-top: 10px;
   margin-bottom: 10px;
   font-weight: bold;
-  color: #d61f1f;
+  color: #a8443a;
 }
 
 #schedule {
@@ -773,7 +774,7 @@ left, categories lined up (and wrapping) on the right */
 }
 
 .credits {
-  color: #d61f1f;
+  color: #a8443a;
 }
 
 #history {
@@ -830,7 +831,7 @@ left, categories lined up (and wrapping) on the right */
 }
 
 .special {
-  color: #d61f1f;
+  color: #a8443a;
 }
 
 iframe {
@@ -847,7 +848,7 @@ iframe {
 }
 
 iframe:focus {
-  outline: 2px solid #8f1313;
+  outline: 2px solid #7d2f28;
   outline-offset: 2px;
 }
 
@@ -908,7 +909,7 @@ iframe:focus {
   margin-bottom: 4px;
   font-size: 13px;
   letter-spacing: 0.08em;
-  color: #d61f1f;
+  color: #a8443a;
 }
 
 .alarm-list {
@@ -940,7 +941,7 @@ iframe:focus {
 
 .alarm:hover svg {
   opacity: 1;
-  stroke: #d61f1f;
+  stroke: #a8443a;
 }
 
 .alarm h3 {
