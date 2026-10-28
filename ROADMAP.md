@@ -2,6 +2,8 @@
 
 ## Next
 
+- **Whole-app impeccable critique + audit.** Not yet run on this app (checked 2026-10-27). One session, in its own worktree: (1) polish every route; (2) critique A (design) and critique B (detector + browser) in parallel, on desktop and phone, per the impeccable skill's `critique.md`; (3) fix every P0 and P1; (4) re-run the critique to confirm it is clean; (5) persist the snapshot with `critique-storage.mjs` and add a Shipped line `impeccable <n>/40, <date>`. Steps: the `new-app` skill, Shipping section. Almanac's pass (2026-10-19, 24/40) still found P1s that ~65 per-feature passes had missed. **Loading states, part of step (1):** static site, so there is no `loading.tsx`. The only network call is the email signup in `main.js`, which disables the button and input while sending and shows `#server-error` on failure: confirm the button shows a visible busy state and the failure offers a retry. Then check every network-bound control shows a busy state on itself. Rule: "Async actions & progress" in `~/Developer/DESIGN.md`; nexus's Past chats sheet (`web/components/PersonChat.tsx`) is the reference for an in-sheet list.
+
 ## Shipped
 - **Center City Security Supplies Google listing points at `/security/`** (2026-10) — the listing's Website field now sends searchers to `https://nobugsphilly.com/security/`.
 - **Fire alarms page for Center City Security Supplies** (2026-10) — `/security/` advertises the sister business's fire alarm equipment (panels, horn strobes, detectors, pull stations, emergency lights, wire and batteries; Edwards Kidde, Gentex, System Sensor, Fire-Lite, Silent Knight), linked from every page's nav and the homepage. Copy approved by the family.
