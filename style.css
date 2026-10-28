@@ -565,7 +565,7 @@ h3 {
 #history {
   font-size: 14px;
   line-height: 1.5;
-  text-align: left;
+  text-align: justify;
 }
 
 #building {
@@ -583,12 +583,10 @@ h3 {
   max-width: 300px;
 }
 
-/* Stacks under the storefront photo, so the story runs in one steady column */
 #loading-dock {
   margin-top: 10px;
-  margin-left: 15px;
-  float: right;
-  clear: right;
+  margin-right: 15px;
+  float: left;
 }
 
 #contact-row {
