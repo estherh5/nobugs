@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -21,13 +21,15 @@
 
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <!-- Main page container -->
   <div id="main-container" class="d-flex flex-column">
 
     <!-- Page header with logo and navigation links -->
     <nav id="header" class="nav fixed-top justify-content-between">
       <a class="nav-item" href="../">
-        <img id="logo" src="../images/logo.png" alt="Logo" title="NoBugs!">
+        <img id="logo" src="../images/logo.png" alt="NoBugs!" title="NoBugs!">
       </a>
       <div id="menu-links" class="nav-item d-flex align-items-center">
         <a class="nav-link" href="../products/">PRODUCTS</a>
@@ -39,7 +41,7 @@
     </nav>
 
     <!-- Main page content -->
-    <div class="container-fluid content">
+    <main id="main" class="container-fluid content">
 
       <!-- Contact information header -->
       <div id="contact-row" class="row">
@@ -85,13 +87,13 @@
 
         <!-- Google Maps iFrame -->
         <div class="col">
-          <iframe
+          <iframe title="Map to NoBugs! at 545 North Orianna Street" loading="lazy"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d24464.8836790789!2d-75.1569350942708!3d39.961283000000016!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb5381159b22f2ef0!2sNobugs!5e0!3m2!1sen!2sus!4v1502575923347&&z-"
             allowfullscreen></iframe>
         </div>
 
       </div>
-    </div>
+    </main>
 
     <!-- Page footer with mailing list sign-up, navigation links, contact information, and creator information -->
     <footer id="footer" class="footer flex-column justify-content-center">
