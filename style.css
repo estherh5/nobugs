@@ -6,8 +6,6 @@ body {
   font-family: 'Abel', sans-serif;
   color: #000000;
   text-align: center;
-  user-select: none;
-  -webkit-user-select: none;
   cursor: default;
 }
 
@@ -16,11 +14,14 @@ body.homepage {
   line-height: 1.5;
 }
 
+/* One focus ring for every control, drawn only for keyboard focus */
 :focus {
-  outline-color: inherit !important;
-  outline-style: solid !important;
-  outline-width: 1px !important;
-  outline-offset: -1px !important;
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid #2a7fff;
+  outline-offset: 2px;
 }
 
 .homepage .container-fluid {
@@ -47,7 +48,6 @@ body.homepage {
 }
 
 a {
-  outline: none;
   text-decoration: none !important;
   color: inherit;
   cursor: pointer;
@@ -59,25 +59,24 @@ a:active, a:focus {
 }
 
 a:hover, #footer img:hover {
-  color: #808080 !important;
+  color: #b31b1b !important;
   filter: grayscale(0%);
   opacity: 1 !important;
   transition: all 0.3s;
 }
 
 a.homepage {
+  display: inline-block;
   margin-left: 5px;
   margin-right: 5px;
   font-size: 11px;
   font-weight: bold;
-  color: #d61f1f !important;
+  color: #c41c1c !important;
   line-height: 1.5;
-  opacity: 0.7;
 }
 
 a.homepage:hover {
-  color: #d61f1f !important;
-  opacity: 1;
+  color: #8f1313 !important;
 }
 
 #logo-big {
@@ -162,38 +161,95 @@ input:disabled, button:disabled {
   opacity: 1 !important;
 }
 
-#invalid-error, #server-error {
-  display: none;
-  visibility: hidden;
-  color: #d61f1f;
+/* Sending: the button says so and spins; the page stays usable */
+#submit.busy {
+  cursor: progress;
+  background-color: #0066ff;
 }
 
-#already {
+#submit.busy::before {
+  content: "";
+  display: inline-block;
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 0.4em;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  vertical-align: -0.1em;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #submit.busy::before {
+    animation: none;
+  }
+}
+
+/* One line is always reserved, so a message never shifts the page */
+#signup-status {
+  min-height: 1.6em;
+  padding-top: 4px;
+}
+
+#invalid-error, #server-error, #already, #success {
   display: none;
+}
+
+#signup-status .shown {
+  display: block;
+}
+
+#invalid-error, #server-error {
+  color: #b31b1b;
 }
 
 #already, #success {
-  visibility: hidden;
-  color: #00af00;
+  color: #176317;
+}
+
+#retry {
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  font-weight: bold;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+#retry:hover {
+  background: none;
+  color: #8f1313;
 }
 
 #modal {
   position: fixed;
   height: 100%;
   width: 100%;
-  top: 0px;
-  left: 0px;
-  display: none;
+  max-height: none;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.72);
-  z-index: 2;
+  cursor: pointer;
 }
 
-.modal-display {
-  display: -webkit-box !important;
-  display: -webkit-flex !important;
-  display: -ms-flexbox !important;
-  display: flex !important;
-  cursor: pointer;
+#modal[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal::backdrop {
+  background: transparent;
 }
 
 .vertical-zoomed {
@@ -305,13 +361,11 @@ input:disabled, button:disabled {
 
 .link-important {
   font-weight: bold;
-  color: #d61f1f;
-  opacity: 0.7;
+  color: #c41c1c;
 }
 
-.link-important:hover, .link-important:focus {
-  color: #d61f1f !important;
-  opacity: 1;
+.link-important:hover {
+  color: #8f1313 !important;
 }
 
 #middle-row {
@@ -380,27 +434,28 @@ h3 {
 
 #close {
   position: fixed;
+  height: 44px;
+  width: 44px;
   padding: 0px;
   border: none;
-  margin-left: 5px;
-  margin-right: 5px;
-  outline: none;
+  margin: 4px;
   top: 0px;
   right: 0px;
   background: none;
-  vertical-align: middle;
+  line-height: 1;
   font-family: inherit;
   font-size: 30px;
   font-weight: bold;
   color: #ffffff;
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.7;
   transition: all 0.3s;
 }
 
-#close:active, #close:focus {
-  outline: none;
-  font-weight: bold;
+#close:focus-visible {
+  outline-color: #ffffff;
+  outline-offset: -4px;
+  opacity: 1;
 }
 
 #close:hover {
@@ -570,18 +625,12 @@ iframe {
   height: 25px;
   width: 130px;
   font-size: 11px;
-  opacity: 0.7;
 }
 
 #footer button {
   padding: 5px;
   height: 25px;
   font-size: 11px;
-  opacity: 0.7;
-}
-
-#footer input:hover, #footer input:focus, #footer button:hover, #footer button:focus {
-  opacity: 1;
 }
 
 #footer .nav-link {
@@ -683,21 +732,100 @@ iframe {
   font-size: 18px;
 }
 
-/* Six nav links fit a 320px phone only with tighter spacing */
+/* Phones: readable type, 44px tap targets, and the logo stacked above the
+nav so five links fit at a size people can read and hit */
 @media only screen and (max-width: 567px) {
-  #logo {
-    margin-left: 5px;
-    margin-right: 5px;
+  #main-row {
+    height: auto;
+    width: 92vw;
+    padding: 20px 10px 8px;
   }
 
-  .nav-link {
-    padding-left: 3px;
-    padding-right: 3px;
+  #logo-big {
+    width: 85%;
+  }
+
+  h1.homepage {
+    font-size: 24px;
+  }
+
+  h2.homepage {
+    font-size: 14px;
+  }
+
+  h2.homepage a {
+    display: inline-block;
+    padding: 12px 0;
   }
 
   a.homepage {
-    margin-left: 3px;
-    margin-right: 3px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 12px 5px;
+    font-size: 15px;
+  }
+
+  #header {
+    flex-direction: column;
+    align-items: center;
+    opacity: 0.95;
+  }
+
+  #logo, .shrink #logo, .shrink:hover #logo {
+    height: 40px !important;
+    width: auto !important;
+    margin: 8px 0 0;
+  }
+
+  #menu-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-link, .shrink .nav-link, .shrink:hover .nav-link {
+    padding: 13px 5px;
+    font-size: 14px !important;
+  }
+
+  .content {
+    margin-top: 110px;
+  }
+
+  input, #footer input {
+    flex: 1;
+    min-width: 0;
+    max-width: 190px;
+    height: 44px;
+    font-size: 16px;
+  }
+
+  button, #footer button {
+    height: 44px;
+    font-size: 15px;
+  }
+
+  #retry {
+    height: auto;
+    padding: 12px 4px;
+  }
+
+  #footer, #footer .nav-link, .footer-link {
+    font-size: 14px;
+  }
+
+  #footer .nav-link {
+    padding: 13px 5px;
+    margin: 0;
+  }
+
+  .footer-link {
+    display: inline-block;
+    padding: 13px 2px;
+  }
+
+  #contact-information a {
+    display: inline-block;
+    padding: 10px 0;
   }
 }
 

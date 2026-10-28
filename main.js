@@ -4,9 +4,13 @@ var images = document.getElementsByClassName('family-image');
 var modal = document.getElementById('modal');
 var modalImage = document.getElementById('modal-image');
 var closeButton = document.getElementById('close');
+var signupForm = document.getElementById('signup');
 var emailInput = document.getElementById('email-input');
 var submitButton = document.getElementById('submit');
+var retryButton = document.getElementById('retry');
+var messages = ['invalid-error', 'server-error', 'already', 'success'];
 var supportsPassive = false; // If browser supports passive event listeners
+var lastThumbnail = null; // Thumbnail that opened the modal, to return focus to
 
 
 // Assess if browser supports passive event listeners for faster processing
@@ -21,90 +25,89 @@ try {
 } catch (e) {}
 
 
-// Toggle shrink style on header when user scrolls
-window.addEventListener('scroll', function() {
-  if (window.pageYOffset > 100) {
-    header.classList.add('shrink');
-    return;
-  } else if (header.classList.contains('shrink')) {
-    header.classList.remove('shrink');
-    return;
-  }
-  return;
-}, supportsPassive ? { passive: true } : false);
+// Toggle shrink style on header when user scrolls (the homepage has no header)
+if (header) {
+  window.addEventListener('scroll', function() {
+    header.classList.toggle('shrink', window.pageYOffset > 100);
+  }, supportsPassive ? { passive: true } : false);
+}
 
 
-// Display zoomed-in image when user clicks thumbnail
+// Display zoomed-in image when user clicks or presses Enter/Space on a thumbnail
+function openPhoto(thumbnail) {
+  lastThumbnail = thumbnail;
+  modalImage.classList.remove('horizontal-zoomed');
+  modalImage.classList.remove('vertical-zoomed');
+  modalImage.classList.add(thumbnail.dataset.orientation + '-zoomed');
+  modalImage.src = thumbnail.src;
+  modalImage.alt = thumbnail.alt;
+  modal.showModal();
+  closeButton.focus();
+}
+
 for (var i = 0; i < images.length; i++) {
+  images[i].setAttribute('tabindex', '0');
+  images[i].setAttribute('role', 'button');
+  images[i].setAttribute('aria-label', 'Enlarge photo: ' + images[i].alt);
   images[i].addEventListener('click', function() {
-    modalImage.classList.remove('horizontal-zoomed');
-    modalImage.classList.remove('vertical-zoomed');
-    modalImage.classList.add(this.dataset.orientation + '-zoomed');
-    modalImage.src = this.src;
-    modalImage.title = this.title;
-    modalImage.alt = this.alt;
-    modal.classList.add('modal-display');
-    return;
+    openPhoto(this);
+  }, false);
+  images[i].addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openPhoto(this);
+    }
   }, false);
 }
 
 
-/* Hide zoomed-in image when user clicks outside of image in modal,
-clicks close button, or clicks escape key when modal is displayed */
-modal.onclick = function(e) {
-  if (e.target == modal) {
-    modal.classList.remove('modal-display');
-    return;
-  }
-  return;
-}
+/* Hide zoomed-in image when user clicks outside of image in modal or clicks
+close button; the native dialog closes itself on Escape and traps focus */
+if (modal) {
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.close();
+    }
+  }, false);
 
-closeButton.onclick = function() {
-  modal.classList.remove('modal-display');
-  return;
-}
+  closeButton.addEventListener('click', function() {
+    modal.close();
+  }, false);
 
-window.onkeydown = function(e) {
-  if (modal.classList.contains('modal-display') && e.keyCode == 27) {
-    e.preventDefault();
-    modal.classList.remove('modal-display');
-    return;
-  }
-  return;
+  modal.addEventListener('close', function() {
+    if (lastThumbnail) {
+      lastThumbnail.focus();
+    }
+  }, false);
 }
 
 
-// Validate email address when Submit button is clicked to join mailing list
-submitButton.onclick = validateEmail;
-
-// Validate email address when Enter key is clicked in email input
-emailInput.addEventListener('keyup', function(e) {
-  if (e.keyCode == 13 && !submitButton.disabled) {
-    e.preventDefault();
-    return validateEmail();
+// Show one sign-up message (or none) and hide the rest
+function showMessage(id) {
+  for (var i = 0; i < messages.length; i++) {
+    document.getElementById(messages[i]).classList.toggle('shown', messages[i] === id);
   }
+}
+
+// Busy state on the button itself while the request is in flight
+function setBusy(busy) {
+  submitButton.disabled = busy;
+  emailInput.disabled = busy;
+  submitButton.setAttribute('aria-busy', busy ? 'true' : 'false');
+  submitButton.classList.toggle('busy', busy);
+  submitButton.textContent = busy ? 'Joining…' : 'Join Our Mailing List';
+}
+
+
+// Validate email address when the form is submitted (button click or Enter key)
+signupForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  validateEmail();
 }, false);
 
+retryButton.addEventListener('click', validateEmail, false);
+
 function validateEmail() {
-  // Disable Submit button and email input
-  submitButton.disabled = true;
-  emailInput.disabled = true;
-
-  // Set cursor style to pending
-  document.body.style.cursor = 'wait';
-
-  // Hide success message but keep it displayed to provide space for message
-  document.getElementById('success').style.display = 'block';
-  document.getElementById('success').style.visibility = 'hidden';
-
-  // Hide other messages
-  document.getElementById('invalid-error').style.display = 'none';
-  document.getElementById('invalid-error').style.visibility = 'hidden';
-  document.getElementById('server-error').style.display = 'none';
-  document.getElementById('server-error').style.visibility = 'hidden';
-  document.getElementById('already').style.display = 'none';
-  document.getElementById('already').style.visibility = 'hidden';
-
   // Remove all whitespace from email input
   var email = emailInput.value.replace(/\s/g, '');
 
@@ -114,93 +117,61 @@ function validateEmail() {
     '.)+[^<>()[\\]\\.,;:\\s@\\"]{2,})$'].join(''), 'i')
 
   if (!format.test(email)) {
-    // Hide success message
-    document.getElementById('success').style.display = 'none';
-
-    // Display error message
-    document.getElementById('invalid-error').style.visibility = 'visible';
-    document.getElementById('invalid-error').style.display = 'block';
-
-    // Enable Submit button and email input
-    submitButton.disabled = false;
-    emailInput.disabled = false;
-
-    // Reset cursor style
-    document.body.style.cursor = '';
-
+    showMessage('invalid-error');
+    emailInput.setAttribute('aria-invalid', 'true');
+    emailInput.focus();
     return;
   }
 
-  // Otherwise, submit email to server
+  emailInput.removeAttribute('aria-invalid');
+  showMessage(null);
   return submitEmail(email);
 }
 
 function submitEmail(email) {
-  var data = JSON.stringify({
-    'email': email
-  });
+  setBusy(true);
+
+  // Give up after 15 seconds so the button never stays busy forever
+  var controller = window.AbortController ? new AbortController() : null;
+  var timer = controller ? setTimeout(function() { controller.abort(); }, 15000) : null;
 
   return fetch('https://nobugs-210202.appspot.com/api/email', {
     headers: {'Content-Type': 'application/json'},
     method: 'POST',
-    body: data
+    body: JSON.stringify({ 'email': email }),
+    signal: controller ? controller.signal : undefined
   })
 
-    // If server errors out, display server error message
-    .catch(function(error) {
-      document.getElementById('success').style.display = 'none';
+    .then(function(response) {
+      // Email address rejected by the server as invalid
+      if (response.status == 400) {
+        showMessage('invalid-error');
+      }
 
-      document.getElementById('server-error').style.visibility = 'visible';
-      document.getElementById('server-error').style.display = 'block';
+      // Email address is already on mailing list
+      else if (response.status == 409) {
+        showMessage('already');
+      }
 
-      // Enable Submit button and email input
-      submitButton.disabled = false;
-      emailInput.disabled = false;
+      // Request is successful: confirm and clear the input
+      else if (response.status == 201) {
+        showMessage('success');
+        emailInput.value = '';
+      }
 
-      // Reset cursor style
-      document.body.style.cursor = '';
+      // Anything else is a server error
+      else {
+        showMessage('server-error');
+      }
     })
 
-    .then(function(response) {
-      if (response) {
-        // Display error message that email address is invalid
-        if (response.status == 400) {
-          document.getElementById('success').style.display = 'none';
+    // Network failure or timeout
+    .catch(function() {
+      showMessage('server-error');
+    })
 
-          document.getElementById('invalid-error').style.visibility = 'visible';
-          document.getElementById('invalid-error').style.display = 'block';
-        }
-
-        // Display message that email address is already on mailing list
-        else if (response.status == 409) {
-          document.getElementById('success').style.display = 'none';
-
-          document.getElementById('already').style.visibility = 'visible';
-          document.getElementById('already').style.display = 'block';
-        }
-
-        // If request is successful, display success message
-        else if (response.status == 201) {
-          document.getElementById('success').style.visibility = 'visible';
-
-          // Clear email input
-          emailInput.value = '';
-        }
-
-        // Otherwise, display server error message
-        else {
-          document.getElementById('success').style.display = 'none';
-
-          document.getElementById('server-error').style.visibility = 'visible';
-          document.getElementById('server-error').style.display = 'block';
-        }
-
-        // Enable Submit button and email input
-        submitButton.disabled = false;
-        emailInput.disabled = false;
-
-        // Reset cursor style
-        document.body.style.cursor = '';
-      }
+    .then(function() {
+      clearTimeout(timer);
+      setBusy(false);
     });
 }

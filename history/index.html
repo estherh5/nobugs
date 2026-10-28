@@ -12,25 +12,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91236421-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-91236421-2');
-    </script>
-
     <title>History | NoBugs! Pest Control Supplies</title>
   </head>
   <body>
 
-    <!-- Hidden modal displayed when user clicks thumbnail image -->
-    <div id="modal" class="align-items-center justify-content-center">
-      <img id="modal-image">
-      <button id="close">&times;</button>
-    </div>
+    <!-- Enlarged photo, opened from a thumbnail -->
+    <dialog id="modal" aria-label="Enlarged photo">
+      <img id="modal-image" alt="">
+      <button id="close" type="button" aria-label="Close">&times;</button>
+    </dialog>
 
     <!-- Main page container -->
     <div id="main-container" class="d-flex flex-column">
@@ -44,7 +34,7 @@
           <a class="nav-link" href="../products/">PRODUCTS</a>
           <a class="nav-link" href="../security/">SECURITY</a>
           <a class="nav-link" href="../seminars/">SEMINARS</a>
-          <a class="nav-link selected" href=".">HISTORY</a>
+          <a class="nav-link selected" href="." aria-current="page">HISTORY</a>
           <a class="nav-link" href="../contact/">CONTACT</a>
         </div>
       </nav>
@@ -65,7 +55,7 @@
             Bruce and Linda Hoffman, the co-owners of NoBugs! and Center City Security Supplies, have served the greater Philadelphia area for over 30 years.
 
             <!-- Building family image thumbnail -->
-            <img id="building" class="family-image vertical" src="../images/building.png" alt="545 N. Orianna St." title="545 N. Orianna St." data-orientation="vertical">
+            <img id="building" class="family-image vertical" src="../images/building.jpg" alt="545 N. Orianna St." title="545 N. Orianna St." data-orientation="vertical">
 
             Bruce's father, Edward Hoffman, started his own pest control supply company in 1935, selling homemade insecticides and cleaning compounds at 47 North 2nd Street.
             Bruce worked with his father during his summers in high school and college in the 1960s. Ed moved his business to 3942 Frankford Avenue in 1968 and sold the company in 1976.
@@ -74,7 +64,7 @@
             they moved to their current location at 545 North Orianna Street in 1994.
 
             <!-- Loading dock family image thumbnail -->
-            <img id="loading-dock" class="family-image horizontal" src="../images/loading-dock.png" alt="Our loading dock" title="Our loading dock" data-orientation="horizontal">
+            <img id="loading-dock" class="family-image horizontal" src="../images/loading-dock.jpg" alt="Our loading dock" title="Our loading dock" data-orientation="horizontal">
 
             Bruce and Linda have worked hard to make their customers part of their family,
             which started growing in the 1990s as they had two children: Esther and Stanley.
@@ -90,20 +80,22 @@
       <!-- Page footer with mailing list sign-up, navigation links, contact information, and creator information -->
       <footer id="footer" class="footer flex-column justify-content-center">
         <div class="p-10">
-          <div class="col d-flex flex-row align-items-center justify-content-center">
-            <input id="email-input" type="email" placeholder="Email address">
-            <button id="submit">Join Our Mailing List</button>
+          <form id="signup" class="col d-flex flex-row align-items-center justify-content-center" novalidate>
+            <input id="email-input" type="email" name="email" autocomplete="email" placeholder="Email address" aria-label="Email address">
+            <button id="submit" type="submit">Join Our Mailing List</button>
+          </form>
+          <div id="signup-status" role="status">
+            <div id="invalid-error">Please enter a valid email address.</div>
+            <div id="server-error">Your email could not be added right now. <button id="retry" type="button">Try again</button></div>
+            <div id="already">You are already on our mailing list!</div>
+            <div id="success">Thanks for signing up!</div>
           </div>
-          <div id="invalid-error">Please enter a valid email address.</div>
-          <div id="server-error">Your email could not be added at this time. Please try again soon.</div>
-          <div id="already">You are already on our mailing list!</div>
-          <div id="success">Thanks for signing up!</div>
         </div>
         <div class="nav justify-content-center">
           <a class="nav-link" href="../products/">PRODUCTS</a>
           <a class="nav-link" href="../security/">SECURITY</a>
           <a class="nav-link" href="../seminars/">SEMINARS</a>
-          <a class="nav-link selected" href=".">HISTORY</a>
+          <a class="nav-link selected" href="." aria-current="page">HISTORY</a>
           <a class="nav-link" href="../contact/">CONTACT</a>
         </div>
         <div id="footer-phone">
@@ -113,21 +105,16 @@
           <a class="footer-link" href="mailto:nobugspestcontrol@gmail.com">nobugspestcontrol@gmail.com</a>
         </div>
         <div>
-          <a class="footer-link" href="../">&copy; Copyright 2017-<script>document.write(new Date().getFullYear())</script> NoBugs!</a>
+          <a class="footer-link" href="../">&copy; Copyright 2017–<script>document.write(new Date().getFullYear())</script> NoBugs!</a>
         </div>
         <div>
           <a class="footer-link" href="https://crystalprism.io">
-            <img id="crystalprism" src="../images/crystalprism.png">
+            <img id="crystalprism" src="../images/crystalprism.png" alt="Made by Crystal Prism">
           </a>
         </div>
       </footer>
 
     </div>
-
-    <!-- Bootstrap scripts -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
     <!-- Main JS script -->
     <script src="../main.js"></script>

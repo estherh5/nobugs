@@ -14,24 +14,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-91236421-2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-91236421-2');
-    </script>
-
     <title>NoBugs! Pest Control Supplies</title>
   </head>
   <body class="homepage">
-
-    <!-- Hidden modal -->
-    <div id="modal">
-      <button id="close">&times;</button>
-    </div>
 
     <!-- Main page container -->
     <div class="container-fluid align-items-center d-flex justify-content-center">
@@ -84,24 +69,21 @@
 
           <!-- Mailing list sign-up -->
           <div class="row pt-10 no-gutters d-flex flex-column">
-            <div class="col d-flex flex-row align-items-center justify-content-center flex-1">
-              <input id="email-input" type="email" placeholder="Email address">
-              <button id="submit">Join Our Mailing List</button>
+            <form id="signup" class="col d-flex flex-row align-items-center justify-content-center flex-1" novalidate>
+              <input id="email-input" type="email" name="email" autocomplete="email" placeholder="Email address" aria-label="Email address">
+              <button id="submit" type="submit">Join Our Mailing List</button>
+            </form>
+            <div id="signup-status" role="status">
+              <div id="invalid-error">Please enter a valid email address.</div>
+              <div id="server-error">Your email could not be added right now. <button id="retry" type="button">Try again</button></div>
+              <div id="already">You are already on our mailing list!</div>
+              <div id="success">Thanks for signing up!</div>
             </div>
-            <div id="invalid-error">Please enter a valid email address.</div>
-            <div id="server-error">Your email could not be added at this time. Please try again soon.</div>
-            <div id="already">You are already on our mailing list!</div>
-            <div id="success">Thanks for signing up!</div>
           </div>
 
         </div>
       </div>
     </div>
-
-    <!-- Bootstrap scripts -->
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
     <!-- Main JS script -->
     <script src="main.js"></script>
